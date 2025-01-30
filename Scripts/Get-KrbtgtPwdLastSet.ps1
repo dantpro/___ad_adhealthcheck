@@ -27,5 +27,5 @@ function Get-ScriptProgress {
 
 #Region Forest Info
 Get-ScriptProgress -Name 'KRBTGT Password Last Set'
-Get-ADUser krbtgt -Property PasswordLastSet | Export-Csv -Path $OutputPath\KRGTGT_pwd_details.csv -NoTypeInformation
+Get-ADUser krbtgt -Property PasswordLastSet | Export-Csv -Path $OutputPath\KRGTGT_pwd_details.csv -NoTypeInformation -Encoding UTF8
 #endregion 

@@ -67,4 +67,4 @@ foreach ($entry in $psoArray) {
 $results 
 $resultsCount = ($results | Measure-Object).count
 Write-Host "Found '$resultsCount' Password Policies" -ForegroundColor Green
-$results | export-csv -Path $OutputPath\Password_Policies.csv -NoTypeInformation
+$results | export-csv -Path $OutputPath\Password_Policies.csv -NoTypeInformation -Encoding UTF8

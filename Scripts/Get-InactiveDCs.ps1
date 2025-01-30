@@ -34,7 +34,7 @@ $dcList = Get-ADComputer -SearchBase $searchBase -properties * -filter *
 #$dcList | select-object name,DNSHostName,LastLogonDate | Where-Object {$_.LastLogonDate -lt $timeframe -or $_.LastLogonDate -eq $null}
 $oldDCs = $dcList | Where-Object {$_.LastLogonDate -lt $timeframe -or $_.LastLogonDate -eq $null}
 if ($oldDCs -ne $null){
-    $oldDCs | select-object name,DNSHostName,LastLogonDate | Export-Csv -Path $OutputPath\Inactive_DCs_details.csv -NoTypeInformation
+    $oldDCs | select-object name,DNSHostName,LastLogonDate | Export-Csv -Path $OutputPath\Inactive_DCs_details.csv -NoTypeInformation -Encoding UTF8
 } else {
    Write-Host "INFO: There are no inactive DCs'" -ForegroundColor Yellow
 }

@@ -27,5 +27,5 @@ function Get-ScriptProgress {
 
 #Region Forest Info
 Get-ScriptProgress -Name 'Pre-Windows 2000 group members'
-Get-ADGroupMember -Identity 'Pre-Windows 2000 Compatible Access' |  Export-Csv -Path $OutputPath\Pre2000_group_members.csv -NoTypeInformation
+Get-ADGroupMember -Identity 'Pre-Windows 2000 Compatible Access' |  Export-Csv -Path $OutputPath\Pre2000_group_members.csv -NoTypeInformation -Encoding UTF8
 #endregion 

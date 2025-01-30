@@ -142,4 +142,4 @@ foreach ($group in $privilegedGroups) {
 
 $count = ($results | measure-object).count
 Write-Host "Found '$count' entries" -ForegroundColor Green
-$results  | export-csv -Path $OutputPath\PrivilegedGroupsMembership.csv -NoTypeInformation
+$results  | export-csv -Path $OutputPath\PrivilegedGroupsMembership.csv -NoTypeInformation -Encoding UTF8

@@ -50,5 +50,5 @@ foreach ($entry in $spns) {
         )
     )
 }
-$result | export-csv -Path $OutputPath\SPN_details.csv -NoTypeInformation
+$result | export-csv -Path $OutputPath\SPN_details.csv -NoTypeInformation -Encoding UTF8
 #endregion

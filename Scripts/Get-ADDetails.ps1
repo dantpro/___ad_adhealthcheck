@@ -49,5 +49,5 @@ $adInfo = @(
         }
     )
 )
-$adInfo | Export-Csv -Path $OutputPath\AD_details.csv -NoTypeInformation
+$adInfo | Export-Csv -Path $OutputPath\AD_details.csv -NoTypeInformation -Encoding UTF8
 #endregion 

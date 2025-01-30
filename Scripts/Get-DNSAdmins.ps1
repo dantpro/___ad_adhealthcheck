@@ -34,7 +34,7 @@ Get-ADGroupMember -Identity 'DNSAdmins' | foreach-object {
    $admins += Get-ADUSer -Identity $_ -Properties Name,Enabled,SamAccountName,LastLogonDate
 }
 if ($($admins.count) -ne 0) {
-    $admins | Export-Csv -Path $OutputPath\DNS_Admins_details.csv -NoTypeInformation
+    $admins | Export-Csv -Path $OutputPath\DNS_Admins_details.csv -NoTypeInformation -Encoding UTF8
 } else {
    Write-Host "INFO: DNS Admins group is empty" -ForegroundColor Yellow
 }

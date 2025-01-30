@@ -47,4 +47,4 @@ foreach ($user in $users) {
 }
 $userReportCount = ($usrReport | measure-object).count
 Write-Host "Found '$userReportCount' User Accounts" -ForegroundColor Green
-$usrReport | export-csv -Path "$OutputPath\User_Details.csv" -NoTypeInformation
+$usrReport | export-csv -Path "$OutputPath\User_Details.csv" -NoTypeInformation -Encoding UTF8

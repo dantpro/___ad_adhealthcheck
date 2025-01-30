@@ -70,7 +70,7 @@ $results = $results | Select-Object Name, SamAccountName, DistinguishedName, Des
 
 $count = ($results | measure-object).count
 Write-Host "Found '$count' Important Accounts entries" -ForegroundColor Green
-$results  | export-csv -Path $OutputPath\Important_Accounts_Details.csv -NoTypeInformation
+$results  | export-csv -Path $OutputPath\Important_Accounts_Details.csv -NoTypeInformation -Encoding UTF8
 
 $importantInfo = @(
     $(New-Object PSObject -Property @{
@@ -86,4 +86,4 @@ $importantInfo = @(
         }
     )
 )
-$importantInfo | export-csv -Path $OutputPath\Important_Accounts_Details_sumamry.csv -NoTypeInformation
+$importantInfo | export-csv -Path $OutputPath\Important_Accounts_Details_sumamry.csv -NoTypeInformation -Encoding UTF8

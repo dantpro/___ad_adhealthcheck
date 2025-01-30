@@ -37,4 +37,4 @@ $adLevels = @(
         }
     )
 )
-$adLevels | Export-Csv -Path $OutputPath\AD_Levels_details.csv -NoTypeInformation
+$adLevels | Export-Csv -Path $OutputPath\AD_Levels_details.csv -NoTypeInformation -Encoding UTF8

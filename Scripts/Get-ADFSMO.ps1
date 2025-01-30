@@ -41,6 +41,6 @@ $fsmoRoles = @(
         }
     )
 )
-$fsmoRoles | Export-Csv -Path $OutputPath\AD_FSMO_details.csv -NoTypeInformation
+$fsmoRoles | Export-Csv -Path $OutputPath\AD_FSMO_details.csv -NoTypeInformation -Encoding UTF8
 
 #endregion

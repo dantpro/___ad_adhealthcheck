@@ -44,5 +44,5 @@ else {
         Info = "Laps not installed / found"
     }
 }
-$lapsInfo | export-csv -Path $OutputPath\LAPS.csv -NoTypeInformation
+$lapsInfo | export-csv -Path $OutputPath\LAPS.csv -NoTypeInformation -Encoding UTF8
 #endRegion

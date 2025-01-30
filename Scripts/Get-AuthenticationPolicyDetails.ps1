@@ -31,11 +31,11 @@ Get-ScriptProgress -Name 'Authentication Policy'
 $ADAuthenticationPolicy = Get-ADAuthenticationPolicy -Filter * | select-object Name, Enforce, UserTGTLifetimeMins
 Write-Host "Found '$($ADAuthenticationPolicy.count)' Authentication Policy entries" -ForegroundColor Green
 if ($($ADAuthenticationPolicy.count) -ne 0) {
-    $ADAuthenticationPolicy | export-csv -Path $OutputPath\Authentication_Policy_Details.csv -NoTypeInformation
+    $ADAuthenticationPolicy | export-csv -Path $OutputPath\Authentication_Policy_Details.csv -NoTypeInformation -Encoding UTF8
 }
 Get-ScriptProgress -Name 'Authentication Policy Silo'
 $ADAuthenticationPolicySilo = Get-ADAuthenticationPolicySilo -Filter * |  select-object  Name, Enforce, UserTGTLifetimeMins
 Write-Host "Found '$($ADAuthenticationPolicySilo.count)' Authentication Policy Silo entries" -ForegroundColor Green
 if ($($ADAuthenticationPolicySilo.count) -ne 0) {
-    $ADAuthenticationPolicySilo | export-csv -Path $OutputPath\Authentication_Policy_Details_Silo.csv -NoTypeInformation
+    $ADAuthenticationPolicySilo | export-csv -Path $OutputPath\Authentication_Policy_Details_Silo.csv -NoTypeInformation -Encoding UTF8
 }

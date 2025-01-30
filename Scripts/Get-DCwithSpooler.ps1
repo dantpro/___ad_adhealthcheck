@@ -46,7 +46,7 @@ $DCList | ForEach-Object {
 } 
 $dcswithPrintSpooler = $dcswithPrintSpooler | where-object {$_.serviceStatus -eq 'Running'} 
 if ($($dcswithPrintSpooler.count) -ne 0) {
-    $dcswithPrintSpooler | Export-Csv -Path $OutputPath\DCs_with_spooler.csv -NoTypeInformation
+    $dcswithPrintSpooler | Export-Csv -Path $OutputPath\DCs_with_spooler.csv -NoTypeInformation -Encoding UTF8
 } else {
    Write-Host "INFO: There are DC's with print spooler service running" -ForegroundColor Yellow
 }

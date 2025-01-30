@@ -34,4 +34,4 @@ $defaultContainers = @(
             ComputerContainer = $adDomain.ComputersContainer 
         })
 )
-$defaultContainers | Export-Csv -Path $OutputPath\Default_Containers.csv -NoTypeInformation
+$defaultContainers | Export-Csv -Path $OutputPath\Default_Containers.csv -NoTypeInformation -Encoding UTF8

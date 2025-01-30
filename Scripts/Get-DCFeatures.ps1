@@ -56,5 +56,5 @@ For ($i = 0; $i -lt $numberOfFeaturesInstalled; $i++) {
     $results += $record
     Clear-Variable Record
 }
-$results | Export-Csv -Path $OutputPath\DC_Features.csv  -NoTypeInformation
+$results | Export-Csv -Path $OutputPath\DC_Features.csv  -NoTypeInformation -Encoding UTF8
 #endregion
