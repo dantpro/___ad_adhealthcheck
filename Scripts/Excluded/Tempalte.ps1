@@ -31,5 +31,5 @@ function Get-ScriptProgress {
 #Region Forest Info
 Get-ScriptProgress -Name 'XXXX'
 
-$result  | Export-Csv -Path $OutputPath\XXX_details.csv -NoTypeInformation
+$result  | Export-Csv -Path $OutputPath\XXX_details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 #endregion 

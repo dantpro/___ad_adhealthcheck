@@ -38,4 +38,4 @@ else {
         Info = "There are no authorised DHCP Servers"
     }
 }
-$dhcpReport | export-csv -Path $OutputPath\DHCP_Details.csv -NoTypeInformation -Encoding UTF8
+$dhcpReport | export-csv -Path $OutputPath\DHCP_Details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"

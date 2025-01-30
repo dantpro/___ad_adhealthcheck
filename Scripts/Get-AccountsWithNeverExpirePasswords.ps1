@@ -31,5 +31,5 @@ Get-ScriptProgress -Name 'Accounts with never expire passwords'
 $userList = Get-ADUSer -filter * -Properties Name,PasswordNeverExpires,Created,DistinguishedName,LastLogonDate,Enabled
 $neverExpireUsers = $userList | where-object {$_.PasswordExpired -ne $true}
 $result = $neverExpireUsers | select-object Name,PasswordNeverExpires,Created,DistinguishedName,LastLogonDate,Enabled | where-object {$_.PasswordNeverExpires -eq $true -and $_.Enabled -eq $true}
-$result  | Export-Csv -Path $OutputPath\Accounts_With_Never_Expire_Password_details.csv -NoTypeInformation -Encoding UTF8
+$result  | Export-Csv -Path $OutputPath\Accounts_With_Never_Expire_Password_details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 #endregion 

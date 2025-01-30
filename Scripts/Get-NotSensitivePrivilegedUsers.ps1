@@ -59,6 +59,6 @@ foreach($group in $groups){
 
 $notSensitivePrivilegedAccounts = $privilegedUsers | Where-Object {$_.AccountNotDelegated -eq $false}
 if (($notSensitivePrivilegedAccounts | Measure-Object).lenght -gt 0){
-    $notSensitivePrivilegedAccounts | Export-Csv -Path $OutputPath\Not_Sensitive_Privileged_Users.csv -NoTypeInformation -Encoding UTF8
+    $notSensitivePrivilegedAccounts | Export-Csv -Path $OutputPath\Not_Sensitive_Privileged_Users.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 }
 #endregion 

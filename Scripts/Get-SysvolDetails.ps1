@@ -43,5 +43,5 @@ if($state -like "DFSR migration has not yet initialized*"){
         }
     )
 }
-$result | export-csv -Path $OutputPath\Sysvol_details.csv -NoTypeInformation -Encoding UTF8
+$result | export-csv -Path $OutputPath\Sysvol_details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 #endregion

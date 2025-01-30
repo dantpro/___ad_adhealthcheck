@@ -32,7 +32,7 @@ Get-ADGroupMember -Identity 'Schema Admins' | foreach-object {
    $admins += Get-ADUSer -Identity $_ -Properties Name,Enabled,SamAccountName,LastLogonDate
 }
 if ($($admins.count) -ne 0) {
-    $admins | Export-Csv -Path $OutputPath\Schema_Admins_details.csv -NoTypeInformation -Encoding UTF8
+    $admins | Export-Csv -Path $OutputPath\Schema_Admins_details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 } else {
    Write-Host "INFO: There are no members of Shema Admins group" -ForegroundColor Yellow
 }

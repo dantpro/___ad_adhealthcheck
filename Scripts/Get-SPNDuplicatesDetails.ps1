@@ -30,6 +30,6 @@ Get-ScriptProgress -Name 'SPN Duplicates'
 
 $spn = SetSPN -X -F | Where-Object { $_ -notlike "Processing entry*" }
 if ($spn[3] -ne 'found 0 group of duplicate SPNs.'){
-    $spn  | Export-Csv -Path $OutputPath\SPN_Duplicates_details.csv -NoTypeInformation -Encoding UTF8
+    $spn  | Export-Csv -Path $OutputPath\SPN_Duplicates_details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 }
 #endregion 

@@ -30,5 +30,5 @@ function Get-ScriptProgress {
 #Region Forest Info
 Get-ScriptProgress -Name 'Get Users with Admin Count = 1'
 
-Get-ADUser -filter * -properties * |where-object {$_.admincount -eq 1} | Select-Object name,distinguishedname | Export-Csv -Path $OutputPath\Users_With_Admin_Count_details.csv -NoTypeInformation -Encoding UTF8
+Get-ADUser -filter * -properties * |where-object {$_.admincount -eq 1} | Select-Object name,distinguishedname | Export-Csv -Path $OutputPath\Users_With_Admin_Count_details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 #endregion 

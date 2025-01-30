@@ -41,7 +41,7 @@ if ($($gmsaReport.count) -ne 0 ) {
             SamAccountName = $_.SamAccountName
         }
     }
-    $output | export-csv -Path $OutputPath\GMSA_Details.csv -NoTypeInformation -Encoding UTF8
+    $output | export-csv -Path $OutputPath\GMSA_Details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 } else {
     Write-Host "INFO: There are no GMSA accounts" -ForegroundColor Yellow
 }

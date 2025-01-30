@@ -44,7 +44,7 @@ foreach ($group in $groups) {
         Write-Host "Found '$groupInfoCount' '$type' entries" -ForegroundColor Green
         $fileName = "$($Group.Name)" + "_" + "$type"
         if ($($groupInfo.count) -ne 0) {
-            $groupInfo | export-csv -Path $OutputPath\Privileged_Groups_Details_$fileName.csv -NoTypeInformation -Encoding UTF8
+            $groupInfo | export-csv -Path $OutputPath\Privileged_Groups_Details_$fileName.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
         } else {
            Write-Host "INFO: Group '$($group.Name)' does not have any '$type' objects'" -ForegroundColor Yellow
         }

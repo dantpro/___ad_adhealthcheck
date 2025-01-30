@@ -49,4 +49,4 @@ foreach ($dc in $dclist) {
 }
 $count = ($results | measure-object).count
 Write-Host "Found '$count' entries" -ForegroundColor Green
-$results  | export-csv -Path $OutputPath\Services_On_DC.csv -NoTypeInformation -Encoding UTF8
+$results  | export-csv -Path $OutputPath\Services_On_DC.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"

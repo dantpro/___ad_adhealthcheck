@@ -50,4 +50,4 @@ foreach ($computer in $computers) {
 }
 $compReportCount = ($CompReport | measure-object).count
 Write-Host "Found '$compReportCount' Computer Accounts" -ForegroundColor Green
-$CompReport | export-csv -Path $OutputPath\Computer_Objets.csv -NoTypeInformation -Encoding UTF8
+$CompReport | export-csv -Path $OutputPath\Computer_Objets.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"

@@ -34,7 +34,7 @@ $adTrusts = Get-ADTrust -Filter *
 Write-Host "Found '$($adTrusts.count)' ADTrust(s)" -ForegroundColor Green
 if ($($adTrusts.count) -ne 0) {
     $adTrusts = $adTrusts | Select-Object Source, Target, DistinguishedName, TrustType, Direction, IntraForest, SIDFilteringForestAware, SIDFilteringQuarantined, SelectiveAuthentication
-    $adTrusts | Export-Csv -Path $OutputPath\AD_Trusts_details.csv -NoTypeInformation -Encoding UTF8
+    $adTrusts | Export-Csv -Path $OutputPath\AD_Trusts_details.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 } else {
    Write-Host "INFO: There are no trusts configured" -ForegroundColor Yellow
 }

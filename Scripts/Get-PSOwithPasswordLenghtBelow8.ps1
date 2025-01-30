@@ -68,5 +68,5 @@ foreach ($entry in $psoArray) {
     $results += $pso
 }
 
-$results | Where-Object {$_.MinPasswordLength -le 8} | Export-Csv -Path $OutputPath\PSO_with_small_pwd_lenght.csv -NoTypeInformation -Encoding UTF8
+$results | Where-Object {$_.MinPasswordLength -le 8} | Export-Csv -Path $OutputPath\PSO_with_small_pwd_lenght.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 #endregion 

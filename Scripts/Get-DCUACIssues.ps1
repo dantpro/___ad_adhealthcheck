@@ -35,7 +35,7 @@ $dcList = Get-ADComputer -SearchBase $searchBase -properties * -filter *
 # 83890176, which is (computer account + enabled for delegation + RODC)
 $DCwithIssues = $dcList | Where-Object {$_.userAccountControl -ne '532480'} | Format-Table name,DNSHostName,userAccountControl
 if ($($DCwithIssues.count) -ne 0) {
-    $DCwithIssues | Export-Csv -Path $OutputPath\DC_with_UAC_issues.csv -NoTypeInformation -Encoding UTF8
+    $DCwithIssues | Export-Csv -Path $OutputPath\DC_with_UAC_issues.csv -NoTypeInformation -Encoding UTF8 -Delimiter ";"
 } else {
    Write-Host "INFO: There are DC's with UAC issues" -ForegroundColor Yellow
 }

@@ -41,4 +41,4 @@ $dclist | ForEach-Object {
         }
     }
 }
-$result | Export-Csv -Path $OutputPath\Backup_Info.csv  -NoTypeInformation -Encoding UTF8
+$result | Export-Csv -Path $OutputPath\Backup_Info.csv  -NoTypeInformation -Encoding UTF8 -Delimiter ";"
